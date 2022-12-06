@@ -7,13 +7,13 @@ function App() {
   const [buttonShare, setButtonShare] = useState(false);
 
   return (
-    <div className="container font-Manrope bg-white rounded-lg overflow-hidden ">
+    <div className="container font-Manrope bg-white rounded-lg overflow-hidden md:flex">
       {/* section 1 = header */}
-      <section className="gambar">
+      <section className="gambar md:flex md:flex-1">
         <img src=".\images\drawers.jpg" alt="header" />
       </section>
 
-      <section className="">
+      <section className="md:flex-1">
         {/* section 2 = article */}
         <article className="description px-8 pt-8">
           <h5 className="text-Very-Dark-Grayish-Blue font-semibold">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h5>
@@ -24,7 +24,7 @@ function App() {
 
         {/* section 3 = profile */}
         {!buttonShare ? (
-          <article className="profile flex flex-row mt-8 mb-4 justify-between px-8">
+          <article className="profile flex flex-row mt-8 justify-between px-8 mb-5">
             <div className="user-profile flex">
               <img src=".\images\avatar-michelle.jpg" alt="profile-pict" className="w-10 h-10 rounded-full" />
               <div className="profile-desc my-auto ml-5">
@@ -33,15 +33,24 @@ function App() {
               </div>
             </div>
             {/* share button */}
-            {/* <button className="bg-blue-300 w-8 h-8 rounded-full my-auto">
-          <img src=".\images\icon-share.svg" alt="share-icon" className="mx-auto" />
-        </button> */}
             <button type="submit" className="bg-Light-Grayish-Blue w-8 h-8 rounded-full my-auto" onClick={() => setButtonShare(true)}>
               <img src=".\images\icon-share.svg" alt="share-icon" className="mx-auto" />
             </button>
           </article>
         ) : (
-          ""
+          <article className="profile flex flex-row mt-8 justify-between px-8 mb-5">
+            <div className="user-profile flex">
+              <img src=".\images\avatar-michelle.jpg" alt="profile-pict" className="w-10 h-10 rounded-full" />
+              <div className="profile-desc my-auto ml-5">
+                <h5 className="text-Very-Dark-Grayish-Blue font-semibold text-sm">Michelle Appleton</h5>
+                <p className="text-Desaturated-Dark-Blue text-xs">28 Jun 2020</p>
+              </div>
+            </div>
+            {/* share button */}
+            <button type="submit" className="bg-Light-Grayish-Blue w-8 h-8 rounded-full my-auto" onClick={() => setButtonShare(!true)}>
+              <img src=".\images\icon-share.svg" alt="share-icon" className="mx-auto" />
+            </button>
+          </article>
         )}
 
         {/* section 4 = share pop up */}
